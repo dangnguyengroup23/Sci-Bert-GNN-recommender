@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-It on processing
-=======
+
 # Research Paper Recommendation System
 
 A hybrid recommendation system that combines fine-tuned SciBERT embeddings with Graph Neural Networks (GNN) to provide accurate research paper recommendations based on natural language queries.
