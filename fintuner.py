@@ -4,6 +4,7 @@ import random
 import logging
 import numpy as np
 import pandas as pd
+import pickle
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -296,6 +297,32 @@ def pretty_recommendation(query, ids, scores, df):
 
 # === DEMO ===
 if __name__ == "__main__":
+    save_dir = MODEL_SAVE_PATH
+
+
+    df_reindexed.to_pickle(os.path.join(save_dir, "df_reindexed.pkl"))
+
+
+    with open(os.path.join(save_dir, "node_list.pkl"), "wb") as f:
+        pickle.dump(node_list, f)
+
+
+    torch.save(proj_emb_cpu, os.path.join(save_dir, "proj_emb_cpu.pt"))
+
+
+    torch.save({
+    "edge_index": edge_index.cpu(),
+    "num_nodes": G_aug.number_of_nodes()
+}, os.path.join(save_dir, "graph_data.pt"))
+
+
+    torch.save(torch.from_numpy(refined_emb_np), os.path.join(save_dir, "refined_emb.pt"))
+
+
+    with open(os.path.join(save_dir, "label_encoder.pkl"), "wb") as f:
+        pickle.dump(le, f)
+
+    logger.info(f"All inference artefacts saved to {save_dir}")
     query = "advancements in graph neural networks for computer vision"
     rec_ids, rec_scores = recommend(query, top_k=5)
 
