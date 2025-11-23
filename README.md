@@ -1,4 +1,9 @@
-
+[![Python](https://img.shields.io/badge/Python-%233776AB.svg?style=flat-square&logo=python&logoColor=white)]()
+[![Jupyter](https://img.shields.io/badge/Jupyter-%23F37626.svg?style=flat-square&logo=Jupyter&logoColor=white)]()
+[![BERT](https://img.shields.io/badge/BERT-%23FFD21E.svg?style=flat-square&logo=huggingface&logoColor=black)]()
+[![SciBERT](https://img.shields.io/badge/SciBERT-%23007ACC.svg?style=flat-square&logo=allenai&logoColor=white)]()
+[![arXiv](https://img.shields.io/badge/arXiv-2203.00000-%23B31B1B.svg?style=flat-square)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Research Paper Recommendation System
 
 A hybrid recommendation system that combines fine-tuned SciBERT embeddings with Graph Neural Networks (GNN) to provide accurate research paper recommendations based on natural language queries.
